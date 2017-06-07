@@ -26,6 +26,34 @@ passport.use(new JirenguStrategy({
 	}
 ));
 
+passport.use(new GitHubStrategy({
+    clientID: '27773eb99a7b1a2e800d',
+    clientSecret: 'ebf9d5d818aabc05dcb97252f562d4138f6f8346',
+    callbackURL: "http://www.youngerpeng.com/auth/github/callback"
+  },
+  function(accessToken, refreshToken, profile, done) {
+    // User.findOrCreate({ githubId: profile.id }, function (err, user) {
+    // });
+    done(null, profile);
+  }
+));
+
+router.get('/github',
+  passport.authenticate('github'));
+
+
+router.get('/github/callback',
+  passport.authenticate('github', { failureRedirect: '/login' }),
+  function(req, res) {
+    req.session.user = {
+      id: req.user.id,
+      username: req.user.displayName || req.user.username,
+      avatar: req.user._json.avatar_url,
+      provider: req.user.provider
+    };
+    res.redirect('/');
+  });
+	
 router.get('/jirengu',passport.authenticate('jirengu'));
 
 router.get('/jirengu/callback',
