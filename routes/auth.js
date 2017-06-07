@@ -20,7 +20,7 @@ passport.use(new JirenguStrategy({
 	clientID: '34e7d8da247822d8b98f3a44a581ca36d3d5bcd7fa088c9f5a468c39c887b4d2',
 	tokenURL: 'http://user.jirengu.com/oauth/token',
 	clientSecret: '67616fff9009e5172129d60092565841663d8141a98de58d59d8d59936d774b1',
-	callbackURL: 'http://localhost:3000/auth/jirengu/callback'},
+	callbackURL: 'http://localhost:3030/auth/jirengu/callback'},
 	function(accessToken,refreshToken,profile,done){
 		done(null,profile)
 	}
