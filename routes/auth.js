@@ -4,7 +4,6 @@ var passport = require('passport');
 var GithubStrategy = require('passport-github').Strategy;
 var JirenguStrategy = require('passport-jirengu').Strategy;
 
-
 passport.serializeUser(function(user,done){
 	console.log('---serializeUser---');
 	console.log(user);
@@ -38,8 +37,7 @@ passport.use(new GitHubStrategy({
   }
 ));
 
-router.get('/github',
-  passport.authenticate('github'));
+router.get('/github', passport.authenticate('github'));
 
 
 router.get('/github/callback',
