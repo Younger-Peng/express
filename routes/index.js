@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 			isLogin: true,
 			user: {
 				username: req.session.user.username,
-				avatar: 'https://img3.doubanio.com/icon/u37340304-26.jpg'
+				avatar: req.session.user.avatar
 			}
 		}			
 	}else{

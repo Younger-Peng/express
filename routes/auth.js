@@ -25,7 +25,7 @@ passport.use(new JirenguStrategy({
 	}
 ));
 
-passport.use(new GitHubStrategy({
+passport.use(new GithubStrategy({
     clientID: '27773eb99a7b1a2e800d',
     clientSecret: 'ebf9d5d818aabc05dcb97252f562d4138f6f8346',
     callbackURL: "http://www.youngerpeng.com/auth/github/callback"
