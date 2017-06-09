@@ -10949,7 +10949,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, "html,\nbody {\n  margin: 0;\n  height: 100%;\n}\nul,\nli {\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\nbody {\n  font: 14px/1.4 'Arial';\n  background: black;\n}\na {\n  text-decoration: none;\n  color: #fff;\n}\n#header {\n  height: 30px;\n  font-size: 12px;\n}\n#header a {\n  display: block;\n  font-size: 12px;\n  margin-top: 6px;\n}\n#header .user-area {\n  padding-right: 16px;\n  float: right;\n}\n#header .user-area li {\n  float: left;\n  margin-left: 5px;\n}\n#header .user-area li span {\n  color: #fff;\n  display: block;\n  margin-top: 6px;\n}\n#header .user-area img {\n  height: 18px;\n  margin-top: 5px;\n  border-radius: 50%;\n}\n#header .add-note {\n  float: left;\n  margin-left: 16px;\n  border: 1px solid #fff;\n  border-radius: 4px;\n  padding: 2px 4px;\n}\n#header .login {\n  float: right;\n  margin-left: 16px;\n}\n#content {\n  position: relative;\n  height: calc(70%);\n}\n", ""]);
+exports.push([module.i, "html,\nbody {\n  margin: 0;\n  height: 100%;\n}\nul,\nli {\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\nbody {\n  font: 14px/1.4 'Arial';\n  background: black;\n}\na {\n  text-decoration: none;\n  color: #fff;\n}\n#header {\n  height: 30px;\n  font-size: 12px;\n  background: #5d78c3;\n  padding: 5px;\n}\n#header a {\n  display: block;\n  font-size: 12px;\n  margin-top: 6px;\n}\n#header .user-area {\n  padding-right: 16px;\n  float: right;\n}\n#header .user-area li {\n  float: left;\n  margin-left: 5px;\n}\n#header .user-area li span {\n  color: #fff;\n  display: block;\n  margin-top: 6px;\n}\n#header .user-area img {\n  height: 18px;\n  margin-top: 5px;\n  border-radius: 50%;\n}\n#header .add-note {\n  float: left;\n  margin-left: 16px;\n  border: 1px solid #fff;\n  border-radius: 4px;\n  padding: 2px 4px;\n}\n#header .add-note:hover {\n  color: #666;\n  background: #fff;\n}\n#header .login {\n  float: right;\n  margin-left: 16px;\n}\n#header .login:hover {\n  color: #eee;\n  text-decoration: underline;\n}\n#content {\n  position: relative;\n  height: calc(70%);\n}\n", ""]);
 
 // exports
 
@@ -10963,7 +10963,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, ".note {\n  position: absolute;\n  color: #333;\n  width: 160px;\n  margin: 20px 10px;\n  outline: none;\n  transition: .3s all ease;\n}\n.note .note-head {\n  height: 20px;\n  background-color: #ea9b35;\n  cursor: move;\n}\n.note .note-head:hover .delete {\n  opacity: 1;\n}\n.note .note-head:before {\n  content: '';\n  display: block;\n  position: absolute;\n  top: -11px;\n  left: 50%;\n  margin-left: -32px;\n  width: 64px;\n  height: 18px;\n  background: #35bba3;\n}\n.note .note-head:after {\n  content: '';\n  display: block;\n  position: absolute;\n  left: 50%;\n  top: -11px;\n  margin-left: 32px;\n  z-index: -1;\n  width: 0;\n  height: 0;\n  border-left: 5px solid #299683;\n  border-top: 18px solid transparent;\n}\n.note .note-ct {\n  padding: 10px;\n  background-color: #deb471;\n  outline: none;\n}\n.note .delete {\n  position: absolute;\n  top: 4px;\n  right: 4px;\n  font-size: 12px;\n  color: #fff;\n  cursor: pointer;\n  opacity: 0;\n  transition: .3s opacity;\n}\n.note.draggable {\n  opacity: .8;\n  cursor: move;\n  transition: none;\n}\n", ""]);
+exports.push([module.i, ".note {\n  position: absolute;\n  color: #333;\n  width: 160px;\n  margin: 20px 10px;\n  outline: none;\n  transition: .3s all ease;\n}\n.note .note-head {\n  height: 20px;\n  background-color: #ea9b35;\n  border-radius: 3px 3px 0 0 ;\n  cursor: move;\n}\n.note .note-head:hover .delete {\n  opacity: 1;\n}\n.note .note-ct {\n  padding: 10px;\n  background-color: #deb471;\n  outline: none;\n  border-radius: 0 0 3px 3px;\n}\n.note .delete {\n  position: absolute;\n  top: 4px;\n  right: 4px;\n  font-size: 12px;\n  color: #fff;\n  cursor: pointer;\n  opacity: 0;\n  transition: .3s opacity;\n}\n.note.draggable {\n  opacity: .8;\n  cursor: move;\n  transition: none;\n}\n", ""]);
 
 // exports
 
@@ -11194,7 +11194,7 @@ Note.prototype = {
 	createNote: function(){
 		var tpl = '<div class="note">'
 						 +'<div class="note-head"><span class="delete">&times;</span></div>'
-						 +'<div class="note-ct" contenteditable="true"></div>'
+						 +'<div class="note-ct" spellcheck="false" contenteditable="true"></div>'
 						 +'</div>';
 		this.$note = $(tpl);
 		this.$note.find('.note-ct').html(this.opts.context);

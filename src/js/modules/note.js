@@ -36,7 +36,7 @@ Note.prototype = {
 	createNote: function(){
 		var tpl = '<div class="note">'
 						 +'<div class="note-head"><span class="delete">&times;</span></div>'
-						 +'<div class="note-ct" contenteditable="true"></div>'
+						 +'<div class="note-ct" spellcheck="false" contenteditable="true"></div>'
 						 +'</div>';
 		this.$note = $(tpl);
 		this.$note.find('.note-ct').html(this.opts.context);

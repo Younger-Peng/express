@@ -18,15 +18,4 @@ var path = require('path');
  	}
  });
 
- // sequelize.sync().then(function(){
- // 	 Note.create({
-	//  	text: 'Hello World'
-	//  }).then(function(note){
-	//  	console.log(note)
-	//  })
- // })
-
-
-
-
 module.exports = Note;
